@@ -22,6 +22,16 @@ export const ArticleMutation = new GraphQLObjectType({
       resolve: (parentValue, args) => {
         return ArticleModel.create(args);
       }
+    },
+
+    removeArticle: {
+      type: ArticleType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve: (pV, args) => {
+        return ArticleModel.findOneAndRemove(args.id);
+      }
     }
   }
 });
