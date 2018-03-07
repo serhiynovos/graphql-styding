@@ -2,14 +2,13 @@ import * as express from 'express';
 import { Express } from 'express';
 import * as graphqlHTTP from 'express-graphql';
 import { buildSchema } from 'graphql';
-import * as fs from 'fs';
 import { connect, connection } from 'mongoose';
+import { schema } from './schema';
 
 connect(`mongodb://localhost:27017/graph-qls`);
 
 connection.on('connected', () => console.log('Connected to db'));
 
-const schema = buildSchema(fs.readFileSync('./src/types/user.graphql').toString())
 
 const app: Express = express();
 

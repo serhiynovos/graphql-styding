@@ -9,7 +9,7 @@ export interface IArticleModel extends Model<IArticle> {
 
 }
 
-export const ArcticleModel = model<IArticle, IArticleModel>('Article', new Schema({
+export const ArticleModel = model<IArticle, IArticleModel>('Article', new Schema({
   title: { type: String, required: true },
   content: { type: String, required: true }
 }));
