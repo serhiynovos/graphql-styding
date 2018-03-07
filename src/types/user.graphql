@@ -1,0 +1,15 @@
+type Query {
+  article: Article
+}
+
+mutation createArticle($article: Article) {
+  article {
+    title,
+    content
+  }
+}
+
+type Article {
+  title: String
+  content: String
+}
