@@ -14,10 +14,7 @@ const app: Express = express();
 
 app.use('/graph-ql', graphqlHTTP({
   schema,
-  graphiql: true,
-  rootValue: {
-    hello: () => 4
-  }
+  graphiql: true
 }))
 
 app.listen(3000, () => {
